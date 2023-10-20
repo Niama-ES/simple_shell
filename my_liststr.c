@@ -14,8 +14,8 @@ list_t *new_head;
 if (!head)
 return (NULL);
 
-*new_head=NULL;
-*new_head = malloc(sizeof(list_t));
+list_t *new_head = NULL;
+new_head = malloc(sizeof(list_t));
 if (!new_head)
 return (NULL);
 
