@@ -26,11 +26,10 @@ int _unsetenv(info_t *info, char *var)
 {
 list_t *node = info->env;
 char *p;
-
+size_t index = 0;
 if (!node || !var)
 return (0);
 
-size_t index = 0;
 while (node)
 {
 p = starts_with(node->str, var);
