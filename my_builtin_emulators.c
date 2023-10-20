@@ -80,17 +80,6 @@ _setenv(info, "PWD", getcwd(buffer, 1024)); }
 return (0);
 }
 /**
- * _myhistory - display the commandes history according to line numbers
- * @info: Structure containing potential arguments. Used to maintain
- * constant function prototype.
- * Return: Always 0
- */
-int _myhistory(info_t *info)
-{
-print_list(info->history);
-return (0);
-}
-/**
  * _myhelp - displays help information for the shell
  * @info: Structure containing potential arguments. Used to maintain
  * constant function prototype.

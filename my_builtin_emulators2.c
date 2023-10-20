@@ -7,16 +7,8 @@
  */
 int _myhistory(info_t *info)
 {
-int line_number = 0;
-list_t *current = info->history;
-
-while (current)
-{
-_printf("%d %s\n", line_number++, current->cmd);
-current = current->next;
-}
-
-return (0);
+	print_list(info->history);
+	return (0);
 }
 
 /**
