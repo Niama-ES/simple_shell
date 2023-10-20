@@ -12,6 +12,7 @@ int is_cmd(info_t *info, char *path)
 {
 struct stat st;
 
+(void)info;
 if (path && !stat(path, &st) && S_ISREG(st.st_mode))
 {
 return (1);
@@ -57,6 +58,8 @@ return (buf);
  */
 char *find_path(info_t *info, char *pathstr, char *cmd)
 {
+char *path;
+char *token;
 if (pathstr == NULL || cmd == NULL)
 return (NULL);
 
@@ -66,8 +69,7 @@ if (is_cmd(info, cmd))
 return (cmd);
 }
 
-char *path;
-char *token = strtok(pathstr, ":");
+token = strtok(pathstr, ":");
 
 while (token != NULL)
 {

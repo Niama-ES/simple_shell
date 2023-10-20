@@ -7,12 +7,13 @@
  *
  * Return: pointer to destination
  */
-char *_strcpy(char *dest, const char *src)
+char *_strcpy(char *dest, char *src)
 {
+int i;
 if (dest == src || src == NULL)
 return (dest);
 
-int i = 0;
+i = 0;
 
 while (src[i] != '\0')
 {

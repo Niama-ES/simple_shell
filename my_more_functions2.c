@@ -81,6 +81,8 @@ char *convert_number(long int num, int base, int flags)
 static char buffer[50];
 char *ptr = buffer;
 char sign = 0;
+char *start;
+char *end;
 unsigned long n = num;
 const char *array = (flags & CONVERT_LOWERCASE
 ) ? "0123456789abcdef" : "0123456789ABCDEF";
@@ -102,8 +104,8 @@ if (sign)
 *ptr = '\0';
 
 /* Reverse the string */
-char *start = buffer;
-char *end = ptr - 1;
+start = buffer;
+end = ptr - 1;
 while (start < end)
 {
 char temp = *start;
