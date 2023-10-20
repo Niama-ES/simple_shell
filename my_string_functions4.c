@@ -19,7 +19,7 @@ d = " ";
 
 for (i = 0; str[i] != '\0'; i++)
 {
-if (!is_delim(str[i], d) && (is_delim(str[i + 1], d) || !str[i + 1))
+if (!is_delim(str[i], d) && (is_delim(str[i + 1], d) || !str[i + 1])
 numwords++;
 }
 

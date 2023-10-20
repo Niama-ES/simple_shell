@@ -7,7 +7,7 @@
  * @n: the amount of characters to be copied hyt
  * Return: the concatenated string gyyh
  */
-char *_strncpy(char *dest, const char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
 char *s = dest;
 int i;
@@ -32,7 +32,7 @@ return (s);
  * @n: the maximum number of characterrrrs to append from src
  * Return: the concatenated stringggg
  */
-char *_strncat(char *dest, const char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
 char *s = dest;
 int i, j;

@@ -34,10 +34,11 @@ return (dest);
  */
 char *_strdup(const char *str)
 {
+char *ret;
 if (str == NULL)
 return (NULL);
 
-char *ret = malloc(strlen(str) + 1);
+ret = malloc(strlen(str) + 1);
 
 if (ret != NULL)
 strcpy(ret, str);
