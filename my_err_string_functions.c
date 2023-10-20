@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
- * eputs - Print an input string
+ * _eputs - Print an input string
  * @str: The string to be printed
  *
  * Return: Nothing
  */
-void eputs(char *str)
+void _eputs(char *str)
 {
 int i;
 if (!str)
@@ -18,13 +18,13 @@ _eputchar(str[i]);
 }
 
 /**
- * eputchar - Write the character c to stderr
+ * _eputchar - Write the character c to stderr
  * @c: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int eputchar(char c)
+int _eputchar(char c)
 {
 static int i;
 static char buf[WRITE_BUF_SIZE];
