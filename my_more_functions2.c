@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <math.h>
 /**
  * _erratoi - converts a string to an integerrrr
  * @s: the string to be converted fdjgk
