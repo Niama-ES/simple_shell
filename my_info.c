@@ -15,6 +15,7 @@ memset(info, 0, sizeof(info_t));
  */
 void set_info(info_t *info, char **av)
 {
+int cpt;
 if (info->arg)
 {
 info->argv = strtow(info->arg, " \t");
@@ -27,12 +28,12 @@ info->argv[0] = _strdup(info->arg);
 info->argv[1] = NULL;
 }
 }
-info->argc = info->argv ? count_elements(info->argv) : 0;
-
+for (i = 0; info->argv && info->argv[i]; i++)
+cpt++;
+info->argc = cpt;
 replace_alias(info);
 replace_vars(info);
 }
-info->fname = av[0];
 }
 
 /**
