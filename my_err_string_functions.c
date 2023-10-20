@@ -7,10 +7,11 @@
  */
 void eputs(char *str)
 {
+int i;
 if (!str)
 return;
 
-for (int i = 0; str[i] != '\0'; i++)
+for (i = 0; str[i] != '\0'; i++)
 {
 _eputchar(str[i]);
 }
@@ -79,11 +80,9 @@ return (1);
  */
 int _putsfd(char *str, int fd)
 {
+int i = 0;
 if (str == NULL)
 return (0);
-
-int i = 0;
-
 while (str[i] != '\0')
 {
 if (_putfd(str[i], fd) == -1)
