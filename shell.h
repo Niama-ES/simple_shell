@@ -181,6 +181,8 @@ int _myhelp(info_t *);
 /* builtin_emulators2.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
+int unset_alias(info_t *, char *);
+int set_alias(info_t *, char *);
 
 /* getline.c module */
 ssize_t get_input(info_t *);
