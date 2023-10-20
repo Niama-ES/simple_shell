@@ -51,7 +51,8 @@ dir = _getenv(info, "HOME=");
 if (!dir)
 {
 _puts("TODO: Handle directory not found error message here\n");
-chdir_ret = /* TODO: Set appropriate return value */;
+chdir_ret = /* TODO: Set appropriate return value */
+chdir((dir=_getenv(info, "PWD=")) ? dir : "/");
 }
 else
 chdir_ret = chdir(dir); }
@@ -64,7 +65,9 @@ _putchar('\n');
 return (1); }
 _puts(_getenv(info, "OLDPWD="));
 _putchar('\n');
-chdir_ret = /* TODO: Set appropriate return value */; }
+chdir_ret = /* TODO: Set appropriate return value */
+chdir((dir=_getenv(info, "OLDPWD=")) ? dir : "/");
+}
 else
 {
 chdir_ret = chdir(info->argv[1]); }
