@@ -1,4 +1,5 @@
-i/**
+#include "shell.h"
+/**
  * _myhistory - displays the command history with line numbers
  * @info: Structure containing potential arguments. Used to maintain
  * constant function prototype.

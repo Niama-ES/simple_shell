@@ -81,12 +81,13 @@ void find_cmd(info_t *info)
 {
 char *path = NULL;
 int k = 0;
+int i;
 info->path = info->argv[0];
 if (info->linecount_flag == 1)
 {
 info->line_count++;
 info->linecount_flag = 0; }
-for (int i = 0; info->arg[i]; i++)
+for (i = 0; info->arg[i]; i++)
 {
 if (!is_delim(info->arg[i], " \t\n"))
 k++; }
@@ -96,7 +97,7 @@ path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
 if (path)
 {
 info->path = path;
-fiork_cmd(info); }
+fork_cmd(info); }
 else
 {
 if ((interactive(info) || _getenv(info, "PATH=") || info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
