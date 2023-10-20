@@ -37,7 +37,7 @@ return (result);
  * @info: pointer to the parameter and return infoooo struct
  * @estr: string containing the specified error typeeeee
  */
-void print_error(info_t *info, const char *estr)
+void print_error(info_t *info, char *estr)
 {
 fprintf(stderr, "%s: %d: %s: %s\n", info->fname
 , info->line_count, info->argv[0], estr);
