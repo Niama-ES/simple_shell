@@ -7,12 +7,14 @@
  */
 char *get_history_file(info_t *info)
 {
-size_t dir_len = _strlen(dir);
 char *dir = _getenv(info, "HOME=");
+size_t dir_len = _strlen(dir);
+size_t hist_file_len;
+char *buf;
 if (!dir)
 return (NULL);
-size_t hist_file_len = _strlen(HIST_FILE);
-char *buf = malloc(dir_len + hist_file_len + 2);
+hist_file_len = _strlen(HIST_FILE);
+buf = malloc(dir_len + hist_file_len + 2);
 if (!buf)
 {
 free(dir);
@@ -34,8 +36,8 @@ return (buf);
  */
 int write_history(info_t *info)
 {
-int fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0644);
 char *filename = get_history_file(info);
+int fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0644);
 list_t *node = info->history;
 if (!filename)
 return (-1);
