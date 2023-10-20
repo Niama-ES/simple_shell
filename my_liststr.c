@@ -30,7 +30,7 @@ if (!new_head->str)
 free(new_head);
 return (NULL);
 }
-i}
+}
 
 new_head->next = *head;
 *head = new_head;
