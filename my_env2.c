@@ -47,14 +47,14 @@ return (info->env_changed);
 }
 
 /**
- * set_env - Initialize a new environment variable or modify an existing one
+ * _setenv - Initialize a new environment variable or modify an existing one
  * @info: Structure containing potential arguments. Used to maintain
  * constant function prototype.
  * @var: the string env var property
  * @value: the string env var value
  * Return: Always 0
  */
-int set_env(info_t *info, char *var, char *value)
+int _set_env(info_t *info, char *var, char *value)
 {
 char *env_var = malloc(_strlen(var) + _strlen(value) + 2);
 list_t *node = info->env;
