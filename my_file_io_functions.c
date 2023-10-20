@@ -7,10 +7,10 @@
  */
 char *get_history_file(info_t *info)
 {
+size_t dir_len = _strlen(dir);
 char *dir = _getenv(info, "HOME=");
 if (!dir)
 return (NULL);
-size_t dir_len = _strlen(dir);
 size_t hist_file_len = _strlen(HIST_FILE);
 char *buf = malloc(dir_len + hist_file_len + 2);
 if (!buf)
@@ -34,14 +34,14 @@ return (buf);
  */
 int write_history(info_t *info)
 {
+int fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0644);
 char *filename = get_history_file(info);
+list_t *node = info->history;
 if (!filename)
 return (-1);
-int fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0644);
 free(filename);
 if (fd == -1)
 return (-1);
-list_t *node = info->history;
 while (node)
 {
 if (_putsfd(node->str, fd) == -1 || _putfd('\n', fd) == -1)
@@ -73,9 +73,10 @@ int i, last = 0, linecount = 0;
 ssize_t rdlen, fsize = 0;
 struct stat st;
 char *buf = NULL, *filename = get_history_file(info);
+int fd;
 if (!filename)
 return (0);
-int fd = open(filename, O_RDONLY);
+fd = open(filename, O_RDONLY);
 free(filename);
 if (fd == -1)
 return (0);
@@ -128,11 +129,12 @@ return (info->histcount);
  */
 int build_history_list(info_t *info, char *buf, int linecount)
 {
-list_t *new_entry = create_history_entry(buf, linecount);
+list_t *new_entry = NULL;
 if (!info->history)
 info->history = new_entry;
 else
-append_entry_to_history(&info->history, new_entry);
+new_entry = info->history;
+add_node_end(&new_entry, buf, linecount);
 return (0);
 }
 /**
