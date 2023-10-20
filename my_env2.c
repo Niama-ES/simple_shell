@@ -56,16 +56,15 @@ return (info->env_changed);
  */
 int set_env(info_t *info, char *var, char *value)
 {
+char *env_var = malloc(_strlen(var) + _strlen(value) + 2);
+list_t *node = info->env;
 if (!var || !value)
 return (0);
-
-char *env_var = malloc(_strlen(var) + _strlen(value) + 2);
 if (!env_var)
 return (1);
 
 snprintf(env_var, _strlen(var) + _strlen(value) + 2, "%s=%s", var, value);
 
-list_t *node = info->env;
 while (node)
 {
 char *p = starts_with(node->str, var);
