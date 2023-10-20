@@ -97,7 +97,7 @@ else
 node = node_starts_with(info->alias, info->argv[i], '=');
 
 if (node)
-print_alias(node);
+print_list(node);
 }
 }
 
