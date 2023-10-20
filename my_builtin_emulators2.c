@@ -80,7 +80,7 @@ if (info->argc == 1)
 node = info->alias;
 while (node)
 {
-print_alias(node);
+print_list(node);
 node = node->next;
 }
 return (0);
