@@ -8,7 +8,7 @@
 int _myhistory(info_t *info)
 {
 int line_number = 0;
-history_t *current = info->history;
+list_t *current = info->history;
 
 while (current)
 {
