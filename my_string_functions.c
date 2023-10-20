@@ -54,7 +54,7 @@ return (NULL);
 needle++;
 haystack++;
 }
-return (*haystack);
+return ((char *)haystack);
 }
 
 /**
