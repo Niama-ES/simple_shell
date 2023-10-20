@@ -80,20 +80,14 @@ _setenv(info, "PWD", getcwd(buffer, 1024)); }
 return (0);
 }
 /**
- * _myhistory - displays the command history with line numbers
+ * _myhistory - display the commandes history according to line numbers
  * @info: Structure containing potential arguments. Used to maintain
  * constant function prototype.
  * Return: Always 0
  */
 int _myhistory(info_t *info)
 {
-int line_number = 0;
-history_t *current = info->history;
-while (current)
-{
-_printf("%d %s\n", line_number++, current->cmd);
-current = current->next;
-}
+print_list(info->history);
 return (0);
 }
 /**
