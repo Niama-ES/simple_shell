@@ -18,6 +18,7 @@ return (NULL);
 if (!new_head)
 return (NULL);
 
+new_head->str = NULL;
 new_head->num = num;
 
 if (str)
