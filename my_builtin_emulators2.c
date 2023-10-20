@@ -31,7 +31,8 @@ return (1);
 saved_char = *equal_sign;
 *equal_sign = '\0';
 
-ret = delete_node_at_index(&(info->alias), str);
+ret = delete_node_at_index(&(info->alias),
+get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
 
 *equal_sign = saved_char;
 
