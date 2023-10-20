@@ -15,7 +15,7 @@ memset(info, 0, sizeof(info_t));
  */
 void set_info(info_t *info, char **av)
 {
-int cpt;
+int cpt,i;
 if (info->arg)
 {
 info->argv = strtow(info->arg, " \t");
@@ -34,6 +34,7 @@ info->argc = cpt;
 replace_alias(info);
 replace_vars(info);
 }
+info->fname = av[0];
 }
 
 /**
