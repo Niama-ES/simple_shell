@@ -9,10 +9,12 @@
  */
 list_t *add_node(list_t **head, const char *str, int num)
 {
+list_t *new_head;
+
 if (!head)
 return (NULL);
 
-list_t *new_head = malloc(sizeof(list_t));
+*new_head = malloc(sizeof(list_t));
 if (!new_head)
 return (NULL);
 
@@ -47,7 +49,7 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 if (!head)
 return (NULL);
 
-list_t *new_node = malloc(sizeof(list_t);
+list_t *new_node = malloc(sizeof(list_t));
 if (!new_node)
 return (NULL);
 
@@ -79,7 +81,7 @@ current = current->next;
 current->next = new_node;
 }
 
-return (new_node);
+return (new_node) ;
 }
 
 /**
