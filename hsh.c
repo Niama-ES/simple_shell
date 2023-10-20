@@ -47,7 +47,7 @@ return (builtin_ret); }
 int find_builtin(info_t *info)
 {
 static const struct {
-const char *name;
+char *name;
 int (*func)(info_t *info);
 } builtin_table[] = {
 {"exit", _myexit},
@@ -61,7 +61,8 @@ int (*func)(info_t *info);
 {NULL, NULL}
 };
 int built_in_ret = -1;
-for (int i = 0; builtin_table[i].name; i++)
+int i;
+for (i = 0; builtin_table[i].name; i++)
 {
 if (_strcmp(info->argv[0], builtin_table[i].name) == 0)
 {
@@ -95,7 +96,7 @@ path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
 if (path)
 {
 info->path = path;
-fork_cmd(info); }
+fiork_cmd(info); }
 else
 {
 if ((interactive(info) || _getenv(info, "PATH=") || info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
