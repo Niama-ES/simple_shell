@@ -31,7 +31,7 @@ return (1);
 saved_char = *equal_sign;
 *equal_sign = '\0';
 
-ret = delete_alias_by_name(&(info->alias), str);
+ret = delete_node_at_index(&(info->alias), str);
 
 *equal_sign = saved_char;
 
