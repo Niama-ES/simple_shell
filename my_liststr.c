@@ -14,6 +14,7 @@ list_t *new_head;
 if (!head)
 return (NULL);
 
+
 new_head = malloc(sizeof(list_t));
 if (!new_head)
 return (NULL);
@@ -29,7 +30,7 @@ if (!new_head->str)
 free(new_head);
 return (NULL);
 }
-}
+i}
 
 new_head->next = *head;
 *head = new_head;
@@ -47,10 +48,12 @@ return (new_head);
  */
 list_t *add_node_end(list_t **head, const char *str, int num)
 {
+list_t *new_node;
+
 if (!head)
 return (NULL);
 
-list_t *new_node = malloc(sizeof(list_t));
+new_node = malloc(sizeof(list_t));
 if (!new_node)
 return (NULL);
 
@@ -154,10 +157,11 @@ return (0);
  */
 void free_list(list_t **head_ptr)
 {
+list_t *current;
 if (!head_ptr || !*head_ptr)
 return;
 
-list_t *current = *head_ptr;
+current = *head_ptr;
 
 while (current)
 {
